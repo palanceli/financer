@@ -27,7 +27,7 @@ func main() {
 func doList() {
 	allStocks := stockspider.ListAllStocks()
 	for _, s := range allStocks {
-		glog.Infof("name:%s, symbol:%s", s.Name, s.Symbol)
+		glog.Infof("name:%s, symbol:%s, type:%s", s.Name, s.Symbol, s.StockTypeString())
 	}
 }
 

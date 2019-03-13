@@ -22,6 +22,19 @@ type StockInfo struct {
 	SType  StockType
 }
 
+func (s StockInfo) StockTypeString() string {
+	switch s.SType {
+	case StockType_CNSH:
+		return "CnSh"
+	case StockType_CNSZ:
+		return "CnSz"
+	case StockType_US:
+		return "Us"
+	default:
+		return "Unknown"
+	}
+}
+
 func decodeToGBK(text string) (string, error) {
 
 	dst := make([]byte, len(text)*2)
